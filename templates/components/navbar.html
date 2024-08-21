@@ -1,0 +1,10 @@
+{% load static %}
+
+<header>
+    <h1 class="logo">Distilled Django Blog</h1>
+    <nav>
+        <ul class="nav-links">
+            <li class="nav-item"><a href="{% url 'blog:blog_list' %}" class="{% if request.path == '/' %}active{% endif %}">Distilled Home</a></li>
+        </ul>
+    </nav>
+</header>
