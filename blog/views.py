@@ -6,8 +6,8 @@ def blog_list(request):
     posts = Blogs.objects.all()
     return render(request, 'blog/blog_list.html', {"posts":posts})
 
-def blog_detail(request, id): 
-    post = Blogs.objects.get(id)#before refactor
+def blog_detail(request, id):
+    post = Blogs.objects.get(id=id)#before refactor
     # post = get_object_or_404(Blogs, id)
     return render(request, 'blog/blog_detail.html', {'post':post})
 
@@ -16,25 +16,27 @@ def blog_create(request):
         form = BlogForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('blog_list')
+            return redirect('blog:blog_list')
     else: 
         form = BlogForm()
     return render(request, 'blog/blog_form.html', {'form':form})
 
 def blog_update(request, id):
-    post = get_object_or_404(Blogs, id)
+    post = Blogs.objects.get(id=id)
+    # post = get_object_or_404(Blogs, id)
     if request.method == 'POST':
         form = BlogForm(request.POST, instance=post)
         if form.is_valid():
             form.save()
-            return redirect('blog_detail', id=post.id)
+            return redirect('blog:blog_detail', id=post.id)
     else:
         form = BlogForm(instance=post)
     return render(request, 'blog/blog_form.html', {'form': form})
 
 def blog_delete(request, id):
-    post = get_object_or_404(Blogs, id)
+    post = Blogs.objects.get(id=id)
+    # post = get_object_or_404(Blogs, id)
     if request.method == 'POST':
         post.delete()
-        return redirect('blog_list')
+        return redirect('blog:blog_list')
     return render(request, 'blog/blog_confirm_delete.html', {'post': post})
