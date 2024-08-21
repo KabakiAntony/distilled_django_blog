@@ -1,0 +1,12 @@
+{% extends 'main.html' %}
+
+{% block content %}
+    <div class="blog list">
+        <li><a href="/create/">Create new post</a></li>
+    {%for post in posts%}
+        <li><a href="/read/{{ post.id }}/">{{ post.title }}</a></li>
+        <p>{{ post.content }}</p>
+        <p>Published at: {{ post.created_at }}</p>
+    {% endfor %}
+    </div>
+{% endblock content %}

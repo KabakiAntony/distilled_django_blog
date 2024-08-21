@@ -1,0 +1,11 @@
+{% extends 'main.html' %}
+
+{% block content %}
+    <div class="blog detail">
+        <p>{{ post.title }}</p>
+        <p>{{ post.content }}</p>
+        <p>Published at: {{ post.created_at }}</p>
+        <li><a href="/update/{{ post.id }}/">Update Post</a></li>
+        <li><a href="/delete/{{ post.id }}/">Delete Post</a></li>
+    </div>
+{% endblock content %}
