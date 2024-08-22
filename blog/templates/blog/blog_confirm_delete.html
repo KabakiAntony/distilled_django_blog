@@ -9,7 +9,7 @@
         <form method="post">
             {% csrf_token %}
             <button type="submit">Yes, delete</button>
-            <a href="{% url 'blog:blog_detail' post.id %}">No, take me back</a>
+            <a class="update-button" href="{% url 'blog:blog_detail' post.id %}">No, take me back</a>
         </form>
     </div>
 {% endblock content %}
