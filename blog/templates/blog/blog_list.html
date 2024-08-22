@@ -1,12 +1,14 @@
 {% extends 'main.html' %}
 
 {% block content %}
-    <div class="blog list">
-        <li><a href="/create/">Create new post</a></li>
+    <a class="create-button" href="/create/">Create new post</a>
+    <div class="blog-list-grid">
     {%for post in posts%}
-        <li><a href="/read/{{ post.id }}/">{{ post.title }}</a></li>
-        <p>{{ post.content }}</p>
-        <p>Published at: {{ post.created_at }}</p>
+        <div class="post">
+            <a class="title" href="/read/{{ post.id }}/">{{ post.title|title }}</a>
+            <p>{{ post.content }}</p>
+            <p class="published">Published on: {{ post.created_at }}</p>
+        </div>
     {% endfor %}
     </div>
 {% endblock content %}

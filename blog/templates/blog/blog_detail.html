@@ -1,11 +1,13 @@
 {% extends 'main.html' %}
 
 {% block content %}
-    <div class="blog detail">
-        <p>{{ post.title }}</p>
+    <div class="blog-detail">
+        <p class="title">{{ post.title }}</p>
         <p>{{ post.content }}</p>
-        <p>Published at: {{ post.created_at }}</p>
-        <li><a href="/update/{{ post.id }}/">Update Post</a></li>
-        <li><a href="/delete/{{ post.id }}/">Delete Post</a></li>
+        <p class="published">Published on: {{ post.created_at }}</p>
+        <div class="blog-detail-buttons">
+            <a class="update-button" href="/update/{{ post.id }}/">Update Post</a>
+            <a class="delete-button" href="/delete/{{ post.id }}/">Delete Post</a>
+        </div>
     </div>
 {% endblock content %}
