@@ -2,11 +2,11 @@
 
 {% block content %}
     <div class="blog-form-page">
-        <h1 class="title">{% if form.instance.id %}Edit{% else %}Create{% endif %} New Post</h1>
+        <h1 class="title">{% if form.instance.id %}Edit{% else %}Create{% endif %} Post</h1>
         <form class="blog-form" method="post">
             {% csrf_token %}
             {{ form.as_p }}
-            <button type="submit">{% if form.instance.pk %}Update{% else %}Publish{% endif %} Blog Post</button>
+            <button type="submit">{% if form.instance.pk %}Update{% else %}Publish{% endif %} Post</button>
         </form>
         </div>
 {% endblock content %}
