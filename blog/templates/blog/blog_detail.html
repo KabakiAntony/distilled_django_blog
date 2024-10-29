@@ -4,10 +4,13 @@
     <div class="blog-detail">
         <p class="title">{{ post.title }}</p>
         <p>{{ post.content }}</p>
-        <p class="published">Published on: {{ post.created_at }}</p>
+        <div class="published">
+            <p>Author: {{ post.author }}</p>
+            <p>Published on: {{ post.created_at }}</p>
+        </div>
         <div class="blog-detail-buttons">
-            <a class="update-button" href="edit/">Edit Post</a>
-            <a class="delete-button" href="delete/">Delete Post</a>
+            <a class="update-button" href="{% url 'blog:blog_update' post.id %}">Edit Post</a>
+            <a class="delete-button" href="{% url 'blog:blog_delete' post.id %}">Delete Post</a>
         </div>
     </div>
 {% endblock content %}

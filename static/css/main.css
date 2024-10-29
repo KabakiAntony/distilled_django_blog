@@ -1,0 +1,125 @@
+:root {
+    --primary: #000000;
+    --header-footer-bg:#2C3E50;
+    --header-footer-text: #ffffff;
+    --buttons-one:#E67E22;
+    --buttons-two:#1ABC9C;
+    --border-radius:1rem;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-rendering: optimizeLegibility;
+    font-size: 16px;
+    font-family: "Outfit", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+body {
+    line-height: 1.6;
+    color: var(--primary);
+    min-height: 100vh;
+    position: relative;    
+}
+
+ul, li{
+    list-style: none;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    height: 4rem;
+    top: 0;
+    position: fixed;
+    width: 100%;
+    background-color: var(--header-footer-bg);
+}
+
+
+.logo {
+    font-size: 28px;
+    font-weight: 100;
+    margin: 0;
+    color: var(--header-footer-text);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--header-footer-text);
+    padding: 10px;
+    font-size: 18px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 10px;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 18px;
+    padding: 10px;
+}
+
+.nav-item a:hover {
+    color: var(--buttons-one);
+}
+
+main {
+    padding: 20px;
+    padding-bottom: 5rem;
+    gap: 1rem;
+    padding-top: 6rem;
+}
+
+footer {
+    color: var(--header-footer-text);
+    height: 4rem;
+    padding: 0.5rem;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 14px;
+    background-color: var(--header-footer-bg);
+}
+
+footer ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer ul li {
+    display: flex;
+    align-items: center;
+}
+
+footer ul li img {
+    vertical-align: middle;
+    width: 24px;
+    height: 24px;
+    margin-left: 10px;
+}
+
+footer ul li a {
+    text-decoration: none;
+    color: inherit;
+}
+
